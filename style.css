@@ -1,0 +1,463 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --metro-red: #d32f2f;
+  --metro-dark: #a91515;
+  --metro-light: #ff5252;
+  --blue: #1976d2;
+  --text-dark: #172033;
+  --text-muted: #64748b;
+  --surface: #ffffff;
+  --border: #e8edf4;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 12, 25, 0.78),
+      rgba(20, 10, 18, 0.82)
+    ),
+    url("METRO.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--text-dark);
+}
+
+/* MAIN APP */
+
+.app {
+  width: 100%;
+  max-width: 950px;
+  margin: auto;
+}
+
+/* HEADER */
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  color: white;
+  margin-bottom: 35px;
+  text-align: left;
+}
+
+.metro-icon {
+  height: 82px;
+  width: 82px;
+  min-width: 82px;
+  border-radius: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #ef4444, #a91515);
+  font-size: 38px;
+  color: white;
+
+  box-shadow: 0 12px 35px rgba(211, 47, 47, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.top h1 {
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.top p {
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #d1d5db;
+  margin-top: 7px;
+}
+
+/* MAIN CARD */
+
+.main-card {
+  background: rgba(255, 255, 255, 0.97);
+  padding: clamp(24px, 5vw, 42px);
+  border-radius: 28px;
+
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  animation: fadeUp 0.7s ease both;
+}
+
+.main-card h2 {
+  font-size: clamp(21px, 3vw, 28px);
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 28px;
+  letter-spacing: -0.5px;
+}
+
+/* INPUT GRID */
+
+.inputs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.input-card {
+  min-width: 0;
+  padding: 22px;
+  background: #f8fafc;
+  border-radius: 18px;
+  border: 1.5px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.input-card:hover {
+  border-color: rgba(211, 47, 47, 0.45);
+  background: #fffafa;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(211, 47, 47, 0.07);
+}
+
+.input-card span {
+  display: block;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* SELECT */
+
+select {
+  width: 100%;
+  height: 54px;
+  margin-top: 12px;
+
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  padding: 0 14px;
+
+  background: white;
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 600;
+
+  outline: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+select:focus {
+  border-color: var(--metro-red);
+  box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.1);
+}
+
+/* SWAP BUTTON */
+
+.swap {
+  height: 54px;
+  width: 54px;
+  border-radius: 18px;
+
+  background: linear-gradient(135deg, #ef4444, #b71c1c);
+  color: white;
+  border: none;
+
+  font-size: 27px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 8px 20px rgba(211, 47, 47, 0.25);
+  transition: all 0.3s ease;
+}
+
+.swap:hover {
+  transform: rotate(180deg) scale(1.08);
+  box-shadow: 0 12px 25px rgba(211, 47, 47, 0.35);
+}
+
+.swap:active {
+  transform: scale(0.94);
+}
+
+/* SEARCH BUTTON */
+
+.search {
+  width: 100%;
+  min-height: 60px;
+  margin-top: 28px;
+
+  border: none;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    100deg,
+    #b71c1c,
+    #e53935,
+    #ff5252
+  );
+
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+
+  cursor: pointer;
+
+  box-shadow: 0 12px 25px rgba(211, 47, 47, 0.25);
+  transition: all 0.3s ease;
+}
+
+.search:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 17px 32px rgba(211, 47, 47, 0.35);
+  filter: brightness(1.05);
+}
+
+.search:active {
+  transform: translateY(0);
+}
+
+/* ROUTE TICKET */
+
+.ticket {
+  background: rgba(255, 255, 255, 0.98);
+  margin-top: 28px;
+  padding: clamp(22px, 4vw, 32px);
+  border-radius: 24px;
+
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  animation: fadeUp 0.5s ease both;
+}
+
+.ticket h2,
+.ticket h3 {
+  color: var(--text-dark);
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+/* SUMMARY */
+
+.summary {
+  background: linear-gradient(135deg, #fff1f1, #fff7f7);
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+
+  border: 1px solid rgba(211, 47, 47, 0.12);
+  color: var(--text-dark);
+  line-height: 1.8;
+}
+
+/* STATION CARD */
+
+.station {
+  position: relative;
+  padding: 17px 20px;
+  margin: 12px 0;
+
+  background: linear-gradient(135deg, #eff6ff, #f8fbff);
+  border-left: 5px solid var(--blue);
+  border-radius: 14px;
+
+  color: var(--text-dark);
+  font-weight: 600;
+
+  box-shadow: 0 5px 15px rgba(25, 118, 210, 0.06);
+  transition: all 0.25s ease;
+}
+
+.station:hover {
+  transform: translateX(5px);
+  background: #e8f3ff;
+  box-shadow: 0 8px 20px rgba(25, 118, 210, 0.12);
+}
+
+/* ROUTE ARROW */
+
+.arrow {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--metro-red);
+  margin: 5px 0;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  body {
+    padding: 25px 16px;
+    background-attachment: scroll;
+  }
+
+  .app {
+    max-width: 600px;
+  }
+
+  .top {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .metro-icon {
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+    font-size: 30px;
+    border-radius: 20px;
+  }
+
+  .top p {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .main-card {
+    border-radius: 23px;
+  }
+
+  .inputs {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .swap {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+
+  .swap:hover {
+    transform: rotate(270deg) scale(1.08);
+  }
+
+  .swap:active {
+    transform: rotate(90deg) scale(0.94);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  body {
+    padding: 18px 12px;
+  }
+
+  .top {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .metro-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    font-size: 27px;
+  }
+
+  .top h1 {
+    font-size: 29px;
+  }
+
+  .top p {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .main-card {
+    padding: 22px 17px;
+    border-radius: 20px;
+  }
+
+  .main-card h2 {
+    font-size: 21px;
+    margin-bottom: 22px;
+  }
+
+  .input-card {
+    padding: 17px;
+  }
+
+  select {
+    font-size: 13px;
+  }
+
+  .search {
+    min-height: 55px;
+    font-size: 15px;
+  }
+
+  .ticket {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .station {
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+
+/* REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
